@@ -172,7 +172,7 @@ hyperv-iso output will be in this color.
 ### Using .box Files With Vagrant
 
 The generated box files include a Vagrantfile template that is suitable for use
-with Vagrant 1.7.4+, but the latest ersion is always recommended.
+with Vagrant 1.7.4+, but the latest version is always recommended.
 
 Example Steps for Hyper-V:
 
