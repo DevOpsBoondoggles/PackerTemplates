@@ -33,8 +33,9 @@ if ($docker_provider -eq "ce") {
   Write-Output "Registering docker service ..."
   . dockerd --register-service
 } else {
-  Write-Output "Install-Module $docker_provider ..."
+  Write-Output "Install-PackageProvider ..."
   Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+  Write-Output "Install-Module $docker_provider ..."
   Install-Module -Name $docker_provider -Repository PSGallery -Force
   Write-Output "Install-Package docker version $docker_version ..."
   Set-PSRepository -InstallationPolicy Trusted -Name PSGallery
