@@ -138,9 +138,9 @@
     "disk_size": "61440",
     "disk_type_id": "1",
     "headless": "false",
-    "iso_checksum": "b3deca38ed2bd8f85ee05ed340b05357ac51fb2a2c2f6d467853f62d2cb93a17",
+    "iso_checksum": "a26740774eb9787c8363deac08c301317268d2bf8444e4d48540181eac112bbc",
     "iso_checksum_type": "sha256",
-    "iso_url": "https://software-download.microsoft.com/db/Windows_InsiderPreview_Server_vNext_en-us_17723.iso",
+    "iso_url": "https://software-download.microsoft.com/db/Windows_InsiderPreview_Server_vNext_en-us_17733.iso",
     "manually_download_iso_from": "https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver",
     "winrm_timeout": "6h"
   }
