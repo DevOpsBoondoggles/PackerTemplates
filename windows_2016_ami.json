@@ -21,6 +21,7 @@
       "iso_checksum_type": "{{user `iso_checksum_type`}}",
       "iso_url": "{{user `iso_url`}}",
       "shutdown_command": "a:/sysprep.bat",
+      "format": "ova",
       "type": "virtualbox-iso",
       "vboxmanage": [
         [
