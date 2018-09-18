@@ -1,6 +1,6 @@
 {
   "builders": [
-   {
+    {
       "boot_wait": "2m",
       "communicator": "winrm",
       "disk_size": "{{user `disk_size`}}",
@@ -10,9 +10,7 @@
         "./scripts/disable-winrm.ps1",
         "./scripts/enable-winrm.ps1",
         "./scripts/microsoft-updates.bat",
-        "./scripts/win-updates.ps1",
-        "./scripts/unattend.xml",
-        "./scripts/sysprep.bat"
+        "./scripts/win-updates.ps1"
       ],
       "guest_additions_mode": "disable",
       "guest_os_type": "Windows2016_64",
@@ -20,7 +18,7 @@
       "iso_checksum": "{{user `iso_checksum`}}",
       "iso_checksum_type": "{{user `iso_checksum_type`}}",
       "iso_url": "{{user `iso_url`}}",
-      "shutdown_command": "a:/sysprep.bat",
+      "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "format": "ova",
       "type": "virtualbox-iso",
       "vboxmanage": [
@@ -37,7 +35,6 @@
           "2"
         ]
       ],
-      "vm_name": "WindowsServer2016",
       "winrm_password": "vagrant",
       "winrm_timeout": "{{user `winrm_timeout`}}",
       "winrm_username": "vagrant"
@@ -46,9 +43,9 @@
   "post-processors": [
     {
       "keep_input_artifact": false,
-      "output": "windows_2016_{{.Provider}}.box",
+      "output": "windows_2016_core_{{.Provider}}.box",
       "type": "vagrant",
-      "vagrantfile_template": "vagrantfile-windows_2016.template"
+      "vagrantfile_template": "vagrantfile-windows_2016_core.template"
     },
     {
       "type": "amazon-import",
@@ -56,19 +53,18 @@
       "access_key": "",
       "secret_key": "",
       "region": "",
-      "ami_name": "packer_windows_2016",
+      "ami_name": "packer_windows_2016_core",
       "s3_bucket_name": "{{user `aws_s3_bucket_name`}}",
       "keep_input_artifact": false,
       "license_type": "BYOL",
       "tags": 
       {
-      "Description": "packer-windows 2016 amazon-import {{timestamp}}"
+      "Description": "packer-windows 2016 core amazon-import {{timestamp}}"
       }
     }
   ],
   "provisioners": [
     {
-      "execute_command": "{{ .Vars }} cmd /c \"{{ .Path }}\"",
       "scripts": [
         "./scripts/enable-rdp.bat"
       ],
@@ -81,13 +77,7 @@
       "type": "powershell"
     },
     {
-      "restart_timeout": "{{user `restart_timeout`}}",
-      "type": "windows-restart"
-    },
-    {
-      "execute_command": "{{ .Vars }} cmd /c \"{{ .Path }}\"",
       "scripts": [
-        "./scripts/pin-powershell.bat",
         "./scripts/set-winrm-automatic.bat",
         "./scripts/uac-enable.bat",
         "./scripts/compile-dotnet-assemblies.bat",
@@ -96,17 +86,16 @@
       ],
       "type": "windows-shell"
     }
-    ],
+  ],
   "variables": {
-    "autounattend": "./answer_files/2016/Autounattend.xml",
+    "autounattend": "./answer_files/2016_core/Autounattend.xml",
     "disk_size": "61440",
     "disk_type_id": "1",
     "headless": "false",
     "iso_checksum": "70721288BBCDFE3239D8F8C0FAE55F1F",
     "iso_checksum_type": "md5",
     "iso_url": "https://software-download.microsoft.com/download/pr/Windows_Server_2016_Datacenter_EVAL_en-us_14393_refresh.ISO",
-    "restart_timeout": "5m",
-    "winrm_timeout": "4h",
+    "winrm_timeout": "6h",
     "aws_s3_bucket_name": "{{env `AWS_S3_BUCKET`}}"
   }
 }
