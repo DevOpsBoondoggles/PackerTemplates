@@ -94,12 +94,6 @@
         "./scripts/compact.bat"
       ],
       "type": "windows-shell"
-    },
-    {
-    "type": "powershell",
-    "inline": [ "C:/ProgramData/Amazon/EC2-Windows/Launch/Scripts/InitializeInstance.ps1 -Schedule",
-                "C:/ProgramData/Amazon/EC2-Windows/Launch/Scripts/SysprepInstance.ps1 -NoShutdown"
-              ]
     }
     ],
   "variables": {
@@ -107,7 +101,6 @@
     "disk_size": "61440",
     "disk_type_id": "1",
     "headless": "false",
-    "hyperv_switchname": "{{env `hyperv_switchname`}}",
     "iso_checksum": "70721288BBCDFE3239D8F8C0FAE55F1F",
     "iso_checksum_type": "md5",
     "iso_url": "https://software-download.microsoft.com/download/pr/Windows_Server_2016_Datacenter_EVAL_en-us_14393_refresh.ISO",
