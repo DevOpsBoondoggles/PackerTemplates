@@ -20,7 +20,7 @@ $urlOfUploadedImageVhd = ('https://' + $storageaccount + '.blob.core.windows.net
 Add-AzureRmVhd -ResourceGroupName $resourceGroup -Destination $urlOfUploadedImageVhd `
                   -LocalFilePath 'D:\work\output-hyperv-iso\Virtual Hard Disks\WindowsServer2019Docker.vhd'
 
-$imageName="windows_2019_docker_17744"
+$imageName="windows_2019_docker_17763"
 $imageConfig = New-AzureRmImageConfig -Location $location
 $imageConfig = Set-AzureRmImageOsDisk -Image $imageConfig -OsType Windows -OsState Generalized `
                   -BlobUri $urlOfUploadedImageVhd

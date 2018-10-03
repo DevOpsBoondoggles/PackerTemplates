@@ -1,9 +1,9 @@
-FROM mcr.microsoft.com/windows-insider:10.0.17744.1001 AS makeiso
+FROM mcr.microsoft.com/windows:ltsc2019 AS makeiso
 WORKDIR C:/source
 COPY . .
 RUN powershell -NoProfile -ExecutionPolicy unrestricted -file make_unattend_iso.ps1
 
-FROM mcr.microsoft.com/windowsservercore-insider:10.0.17744.1001
+FROM mcr.microsoft.com/windowsservercore:ltsc2019
 ENV chocolateyUseWindowsCompression false
 
 RUN powershell -NoProfile -ExecutionPolicy unrestricted -Command \
