@@ -9,7 +9,7 @@ if (!(Test-Path 'c:\Program Files\sysinternals')) {
   New-Item -Path 'c:\Program Files\sysinternals' -type directory -Force -ErrorAction SilentlyContinue
 }
 if (!(Test-Path 'c:\Program Files\sysinternals\bginfo.exe')) {
-  (New-Object Net.WebClient).DownloadFile('http://live.sysinternals.com/bginfo.exe', 'c:\Program Files\sysinternals\bginfo.exe')
+  (New-Object Net.WebClient).DownloadFile('https://live.sysinternals.com/bginfo.exe', 'c:\Program Files\sysinternals\bginfo.exe')
 }
 if (!(Test-Path 'c:\Program Files\sysinternals\bginfo.bgi')) {
   (New-Object Net.WebClient).DownloadFile('https://github.com/StefanScherer/windows-docker-workshop/raw/master/prepare-vms/azure/packer/bginfo.bgi', 'c:\Program Files\sysinternals\bginfo.bgi')
