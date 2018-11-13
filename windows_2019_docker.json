@@ -170,7 +170,7 @@
     "autounattend": "./answer_files/2019_core/Autounattend.xml",
     "disk_size": "61440",
     "disk_type_id": "1",
-    "docker_images": "mcr.microsoft.com/windows/nanoserver:1809 mcr.microsoft.com/windows/servercore:ltsc2019  mcr.microsoft.com/windows/servercore:1809  mcr.microsoft.com/windows:1809",
+    "docker_images": "mcr.microsoft.com/windows/nanoserver:1809 mcr.microsoft.com/windows/servercore:ltsc2019 mcr.microsoft.com/windows/servercore:1809 mcr.microsoft.com/windows:1809",
     "docker_provider": "ee",
     "docker_version": "18-09-0",
     "headless": "false",
