@@ -170,7 +170,7 @@
     "autounattend": "./answer_files/2016_core/Autounattend.xml",
     "disk_size": "61440",
     "disk_type_id": "1",
-    "docker_images": "microsoft/windowsservercore microsoft/nanoserver",
+    "docker_images": "microsoft/windowsservercore microsoft/nanoserver microsoft/windowsservercore:ltsc2016 microsoft/nanoserver:sac2016",
     "docker_provider": "ee",
     "docker_version": "18-09-0",
     "headless": "false",
