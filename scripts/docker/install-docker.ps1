@@ -26,7 +26,7 @@ if ($docker_provider -eq "ce") {
   Write-Output "Downloading docker $docker_version ..."
   wget -outfile $env:TEMP\docker.zip $("https://dockermsft.blob.core.windows.net/dockercontainer/docker-{0}.zip" -f $docker_version)
   Expand-Archive -Path $env:TEMP\docker.zip -DestinationPath $env:TEMP -Force
-  copy $env:TEMP\docker\*.exe $env:ProgramFiles\docker
+  copy $env:TEMP\docker\*.* $env:ProgramFiles\docker
   Remove-Item $env:TEMP\docker.zip
   [Environment]::SetEnvironmentVariable("Path", $env:Path + ";$($env:ProgramFiles)\docker", [EnvironmentVariableTarget]::Machine)
   $env:Path = $env:Path + ";$($env:ProgramFiles)\docker"
