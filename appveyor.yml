@@ -3,7 +3,7 @@ image: Visual Studio 2017
 
 install:
   - choco feature disable --name showDownloadProgress
-  - choco install -y packer -source bin
+  - choco install -y packer
   - ps: Install-WindowsFeature Hyper-V-PowerShell
 
 build_script:
