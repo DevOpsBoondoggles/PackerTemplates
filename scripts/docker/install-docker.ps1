@@ -28,6 +28,7 @@ if ($docker_provider -eq "ce") {
   Expand-Archive -Path $env:TEMP\docker.zip -DestinationPath $env:TEMP -Force
   copy $env:TEMP\docker\*.* $env:ProgramFiles\docker
   Remove-Item $env:TEMP\docker.zip
+  Remove-Item -Recurse $env:TEMP\docker
   [Environment]::SetEnvironmentVariable("Path", $env:Path + ";$($env:ProgramFiles)\docker", [EnvironmentVariableTarget]::Machine)
   $env:Path = $env:Path + ";$($env:ProgramFiles)\docker"
   Write-Output "Registering docker service ..."
