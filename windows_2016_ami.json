@@ -1,8 +1,9 @@
 {
   "builders": [
-   {
+    {
       "boot_wait": "2m",
       "communicator": "winrm",
+      "cpus": 2,
       "disk_size": "{{user `disk_size`}}",
       "floppy_files": [
         "{{user `autounattend`}}",
@@ -14,29 +15,16 @@
         "./scripts/unattend.xml",
         "./scripts/sysprep.bat"
       ],
+      "format": "ova",
       "guest_additions_mode": "disable",
       "guest_os_type": "Windows2016_64",
       "headless": "{{user `headless`}}",
       "iso_checksum": "{{user `iso_checksum`}}",
       "iso_checksum_type": "{{user `iso_checksum_type`}}",
       "iso_url": "{{user `iso_url`}}",
+      "memory": 2048,
       "shutdown_command": "a:/sysprep.bat",
-      "format": "ova",
       "type": "virtualbox-iso",
-      "vboxmanage": [
-        [
-          "modifyvm",
-          "{{.Name}}",
-          "--memory",
-          "2048"
-        ],
-        [
-          "modifyvm",
-          "{{.Name}}",
-          "--cpus",
-          "2"
-        ]
-      ],
       "vm_name": "WindowsServer2016",
       "winrm_password": "vagrant",
       "winrm_timeout": "{{user `winrm_timeout`}}",
@@ -51,19 +39,20 @@
       "vagrantfile_template": "vagrantfile-windows_2016.template"
     },
     {
-      "type": "amazon-import",
-      "only": ["virtualbox-iso"],
       "access_key": "",
-      "secret_key": "",
-      "region": "",
       "ami_name": "packer_windows_2016",
-      "s3_bucket_name": "{{user `aws_s3_bucket_name`}}",
       "keep_input_artifact": false,
       "license_type": "BYOL",
-      "tags": 
-      {
-      "Description": "packer-windows 2016 amazon-import {{timestamp}}"
-      }
+      "only": [
+        "virtualbox-iso"
+      ],
+      "region": "",
+      "s3_bucket_name": "{{user `aws_s3_bucket_name`}}",
+      "secret_key": "",
+      "tags": {
+        "Description": "packer-windows 2016 amazon-import {{timestamp}}"
+      },
+      "type": "amazon-import"
     }
   ],
   "provisioners": [
@@ -96,9 +85,10 @@
       ],
       "type": "windows-shell"
     }
-    ],
+  ],
   "variables": {
     "autounattend": "./answer_files/2016/Autounattend.xml",
+    "aws_s3_bucket_name": "{{env `AWS_S3_BUCKET`}}",
     "disk_size": "61440",
     "disk_type_id": "1",
     "headless": "false",
@@ -106,8 +96,7 @@
     "iso_checksum_type": "md5",
     "iso_url": "https://software-download.microsoft.com/download/pr/Windows_Server_2016_Datacenter_EVAL_en-us_14393_refresh.ISO",
     "restart_timeout": "5m",
-    "winrm_timeout": "4h",
-    "aws_s3_bucket_name": "{{env `AWS_S3_BUCKET`}}"
+    "winrm_timeout": "4h"
   }
 }
 

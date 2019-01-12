@@ -4,17 +4,17 @@
       "boot_command": "",
       "boot_wait": "5s",
       "communicator": "winrm",
+      "cpus": 2,
+      "disk_adapter_type": "lsisas1068",
       "headless": false,
+      "memory": 2048,
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "source_path": "{{user `source_path`}}",
       "type": "vmware-vmx",
       "vm_name": "windows_10_docker",
       "vmx_data": {
         "RemoteDisplay.vnc.enabled": "false",
-        "RemoteDisplay.vnc.port": "5900",
-        "memsize": "2048",
-        "numvcpus": "2",
-        "scsi0.virtualDev": "lsisas1068"
+        "RemoteDisplay.vnc.port": "5900"
       },
       "vmx_remove_ethernet_interfaces": true,
       "vnc_port_max": 5980,
