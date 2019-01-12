@@ -55,7 +55,7 @@
       "memory": 2048,
       "shutdown_command": "a:/sysprep.bat",
       "type": "vmware-iso",
-      "version": 12,
+      "version": 14,
       "vm_name": "WindowsServer2019",
       "vmx_data": {
         "RemoteDisplay.vnc.enabled": "false",

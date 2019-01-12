@@ -26,7 +26,7 @@
       "memory": 2048,
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "type": "vmware-iso",
-      "version": 12,
+      "version": 14,
       "vmx_data": {
         "RemoteDisplay.vnc.enabled": "false",
         "RemoteDisplay.vnc.port": "5900"
