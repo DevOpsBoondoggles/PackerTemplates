@@ -20,12 +20,12 @@ Some of my enhancements are:
 
 ### Packer Version
 
-[Packer](https://github.com/mitchellh/packer/blob/master/CHANGELOG.md) `1.1.3` is recommended.
+[Packer](https://github.com/mitchellh/packer/blob/master/CHANGELOG.md) `1.3.3` is recommended.
 
 ### Windows Versions
 
 The following Windows versions are known to work (built with VMware Fusion Pro
-10.1.1):
+11.0.2):
 
 * Windows 10
   * Windows 10 1809 -> Vagrant Cloud box [StefanScherer/windows_10](https://app.vagrantup.com/StefanScherer/boxes/windows_10)
