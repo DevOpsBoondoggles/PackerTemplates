@@ -160,7 +160,7 @@
     "disk_type_id": "1",
     "docker_images": "microsoft/windowsservercore microsoft/nanoserver microsoft/windowsservercore:ltsc2016 microsoft/nanoserver:sac2016",
     "docker_provider": "ee",
-    "docker_version": "18-09-0",
+    "docker_version": "18-09-1",
     "headless": "false",
     "iso_checksum": "70721288BBCDFE3239D8F8C0FAE55F1F",
     "iso_checksum_type": "md5",
