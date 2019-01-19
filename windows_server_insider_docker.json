@@ -144,7 +144,7 @@
     "disk_size": "61440",
     "disk_type_id": "1",
     "old_docker_images": "microsoft/nanoserver-insider microsoft/windowsservercore-insider",
-    "docker_images": "",
+    "docker_images": "mcr.microsoft.com/windows/nanoserver/insider:10.0.18298.1000 mcr.microsoft.com/windows/servercore/insider:10.0.18298.1000 mcr.microsoft.com/windows/insider:10.0.18298.1000",
     "docker_provider": "ee",
     "docker_version": "18-09-1",
     "headless": "false",
