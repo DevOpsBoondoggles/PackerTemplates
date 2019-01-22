@@ -1,4 +1,4 @@
-# My Retina Windows Templates for Packer
+# Windows Templates for Packer
 
 [![Build status](https://ci.appveyor.com/api/projects/status/76pea1oexae5ca05?svg=true)](https://ci.appveyor.com/project/StefanScherer/packer-windows)
 
@@ -16,7 +16,6 @@ Some of my enhancements are:
 
 * Support of fullscreen Retina display on a MacBook Pro.
 * WinRM, no more OpenSSH
-* PowerShell attached to taskbar in desktop editions
 
 ### Packer Version
 
