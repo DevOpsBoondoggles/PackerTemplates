@@ -146,9 +146,9 @@
   "variables": {
     "autounattend": "./answer_files/10_insider/Autounattend.xml",
     "disk_size": "61440",
-    "iso_checksum": "ae1e3662acfb9435b0b611679c2843f0249a1dfa48033ae7e36df5619d1f592e",
+    "iso_checksum": "8b42efb4ef266a626a913c9f4377d293f83d197f0ed64fe88f6748fa36a32008",
     "iso_checksum_type": "sha256",
-    "iso_url": "https://software-download.microsoft.com/db/Windows10_InsiderPreview_Client_x64_en-us_18272.iso",
+    "iso_url": "https://software-download.microsoft.com/db/Windows10_InsiderPreview_Client_x64_en-us_18290.iso",
     "manually_download_iso_from": "https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewadvanced"
   }
 }
