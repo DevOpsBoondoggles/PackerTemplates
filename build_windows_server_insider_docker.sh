@@ -4,5 +4,5 @@
 PACKER_LOG=debug packer build \
   --only=vmware-iso \
   --var vhv_enable=true \
-  --var iso_url=~/packer_cache/insider/Windows_InsiderPreview_Server_en-us_18334.iso \
+  --var iso_url=~/packer_cache/insider/Windows_InsiderPreview_Server_en-us_18346.iso \
   windows_server_insider_docker.json
