@@ -43,8 +43,7 @@ if not exist "C:\Windows\Temp\VBoxGuestAdditions.iso" (
 )
 
 cmd /c ""C:\Program Files\7-Zip\7z.exe" x C:\Windows\Temp\VBoxGuestAdditions.iso -oC:\Windows\Temp\virtualbox"
-certutil -addstore -f "TrustedPublisher" C:\Windows\Temp\virtualbox\cert\vbox-sha256.cer
-certutil -addstore -f "TrustedPublisher" C:\Windows\Temp\virtualbox\cert\vbox-sha1.cer
+cmd /c for %%i in (C:\Windows\Temp\virtualbox\cert\vbox*.cer) do C:\Windows\Temp\virtualbox\cert\VBoxCertUtil add-trusted-publisher %%i --root %%i
 cmd /c C:\Windows\Temp\virtualbox\VBoxWindowsAdditions.exe /S
 rd /S /Q "C:\Windows\Temp\virtualbox"
 goto :done
