@@ -98,7 +98,7 @@
     "disk_type_id": "1",
     "docker_images": "mcr.microsoft.com/windows/nanoserver:1809 mcr.microsoft.com/windows/servercore:ltsc2019",
     "docker_provider": "ee",
-    "docker_version": "18-09-3",
+    "docker_version": "18-09-4",
     "headless": "false",
     "hyperv_switchname": "{{env `hyperv_switchname`}}",
     "iso_checksum": "57FAF4A2EA4484CFDF5E964C539313C061C4D9CAC474E723D60405F2EA02D570",
