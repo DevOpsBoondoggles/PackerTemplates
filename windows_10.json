@@ -3,7 +3,7 @@
     {
       "boot_wait": "6m",
       "communicator": "winrm",
-      "cpu": "2",
+      "cpus": "2",
       "disk_size": "{{user `disk_size`}}",
       "floppy_files": [
         "{{user `autounattend`}}",
@@ -20,7 +20,7 @@
       "iso_checksum": "{{user `iso_checksum`}}",
       "iso_checksum_type": "{{user `iso_checksum_type`}}",
       "iso_url": "{{user `iso_url`}}",
-      "ram_size": "2048",
+      "memory": "2048",
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "switch_name": "{{user `switch_name`}}",
       "type": "hyperv-iso",

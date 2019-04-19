@@ -3,7 +3,7 @@
     {
       "boot_wait": "0s",
       "communicator": "winrm",
-      "cpu": 2,
+      "cpus": 2,
       "differencing_disk": false,
       "disk_size": "{{user `disk_size`}}",
       "enable_secure_boot": true,
@@ -23,7 +23,7 @@
       "iso_checksum": "{{user `iso_checksum`}}",
       "iso_checksum_type": "{{user `iso_checksum_type`}}",
       "iso_url": "{{user `iso_url`}}",
-      "ram_size": 2048,
+      "memory": 2048,
       "shutdown_command": "a:/sysprep.bat",
       "skip_compaction": true,
       "skip_export": true,
