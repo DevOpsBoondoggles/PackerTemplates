@@ -143,7 +143,6 @@
     "autounattend": "./answer_files/server_insider/Autounattend.xml",
     "disk_size": "61440",
     "disk_type_id": "1",
-    "old_docker_images": "microsoft/nanoserver-insider microsoft/windowsservercore-insider",
     "docker_images": "mcr.microsoft.com/windows/nanoserver/insider:10.0.18356.1 mcr.microsoft.com/windows/servercore/insider:10.0.18356.1 mcr.microsoft.com/windows/insider:10.0.18356.1",
     "docker_provider": "master",
     "docker_version": "",
