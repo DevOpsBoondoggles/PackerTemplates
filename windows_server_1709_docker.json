@@ -3,7 +3,7 @@
     {
       "boot_wait": "60s",
       "communicator": "winrm",
-      "cpu": 2,
+      "cpus": 2,
       "disk_size": "{{user `disk_size`}}",
       "enable_secure_boot": true,
       "enable_virtualization_extensions": true,
@@ -21,7 +21,7 @@
       "iso_checksum": "{{user `iso_checksum`}}",
       "iso_checksum_type": "{{user `iso_checksum_type`}}",
       "iso_url": "{{user `iso_url`}}",
-      "ram_size": 2048,
+      "memory": 2048,
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "switch_name": "{{user `hyperv_switchname`}}",
       "type": "hyperv-iso",
