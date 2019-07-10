@@ -147,7 +147,7 @@ only have Hyper-V installed on my laptop, so I run:
 packer build --only hyperv-iso -var 'hyperv_switchname=Ethernet' -var 'iso_url=./server2016.iso' .\windows_2016_docker.json
 ```
 
-You then can use this box with Vagrant to spin up a Hyper-V VM.
+Where `Ethernet` is the name of my default Hyper-V Virtual Switch. You then can use this box with Vagrant to spin up a Hyper-V VM.
 
 #### Generation 2 VMs
 
