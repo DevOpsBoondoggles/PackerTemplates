@@ -3,6 +3,7 @@
     {
       "boot_wait": "6m",
       "communicator": "winrm",
+      "configuration_version": "8.0",
       "cpus": "2",
       "disk_size": "{{user `disk_size`}}",
       "floppy_files": [
