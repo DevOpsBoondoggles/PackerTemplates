@@ -117,7 +117,7 @@
     }
   ],
   "variables": {
-    "winrm_timeout": "6h",
+    "winrm_timeout": "6h"
   }
 }
 
