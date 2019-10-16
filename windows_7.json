@@ -7,37 +7,6 @@
       "winrm_timeout": "{{user `winrm_timeout`}}",
       "winrm_username": "vagrant",
       "cpus": 2,
-      "disk_size": 61440,
-      "floppy_files": [
-        "./answer_files/7/Autounattend.xml",
-        "./scripts/dis-updates.ps1",
-        "./scripts/microsoft-updates.bat",
-        "./scripts/win-updates.ps1"
-      ],
-      "headless": true,
-      "iso_checksum": "1d0d239a252cb53e466d39e752b17c28",
-      "iso_checksum_type": "md5",
-      "iso_url": "http://care.dlservice.microsoft.com/dl/download/evalx/win7/x64/EN/7600.16385.090713-1255_x64fre_enterprise_en-us_EVAL_Eval_Enterprise-GRMCENXEVAL_EN_DVD.iso",
-      "memory": 2048,
-      "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
-      "ssh_password": "vagrant",
-      "ssh_username": "vagrant",
-      "ssh_wait_timeout": "8h",
-      "type": "qemu",
-      "accelerator": "kvm",
-      "output_directory": "windows_7-qemu",
-      "qemuargs": [
-        [ "-drive", "file=windows_7-qemu/{{ .Name }},if=virtio,cache=writeback,discard=ignore,format=qcow2,index=1" ],
-        [ "-drive", "file={{ user `virtio_win_iso` }},media=cdrom,index=3" ]
-      ]
-    },
-    {
-      "boot_wait": "2m",
-      "communicator": "winrm",
-      "winrm_password": "vagrant",
-      "winrm_timeout": "{{user `winrm_timeout`}}",
-      "winrm_username": "vagrant",
-      "cpus": 2,
       "disk_adapter_type": "lsisas1068",
       "disk_size": 61440,
       "floppy_files": [
@@ -149,7 +118,6 @@
   ],
   "variables": {
     "winrm_timeout": "6h",
-    "virtio_win_iso": "/home/quamotion/git/packer-windows/virtio-win.iso"
   }
 }
 
