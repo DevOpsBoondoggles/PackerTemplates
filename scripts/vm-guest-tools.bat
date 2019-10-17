@@ -9,6 +9,7 @@ msiexec /qb /i C:\Windows\Temp\7z1900-x64.msi
 if "%PACKER_BUILDER_TYPE%" equ "vmware-iso" goto :vmware
 if "%PACKER_BUILDER_TYPE%" equ "virtualbox-iso" goto :virtualbox
 if "%PACKER_BUILDER_TYPE%" equ "parallels-iso" goto :parallels
+if "%PACKER_BUILDER_TYPE%" equ "qemu" goto :qemu
 goto :done
 
 :vmware
@@ -54,6 +55,12 @@ if exist "C:\Users\vagrant\prl-tools-win.iso" (
 	cmd /C "C:\Program Files\7-Zip\7z.exe" x C:\Windows\Temp\prl-tools-win.iso -oC:\Windows\Temp\parallels
 	cmd /C C:\Windows\Temp\parallels\PTAgent.exe /install_silent
 	rd /S /Q "C:\Windows\Temp\parallels"
+)
+goto :done
+
+:qemu
+if exist "E:\guest-agent\" (
+    msiexec /qb /x E:\guest-agent\qemu-ga-x86_64.msi
 )
 
 :done
