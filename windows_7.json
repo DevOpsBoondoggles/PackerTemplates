@@ -2,6 +2,10 @@
   "builders": [
     {
       "boot_wait": "2m",
+      "communicator": "winrm",
+      "winrm_password": "vagrant",
+      "winrm_timeout": "{{user `winrm_timeout`}}",
+      "winrm_username": "vagrant",
       "cpus": 2,
       "disk_adapter_type": "lsisas1068",
       "disk_size": 61440,
@@ -9,8 +13,7 @@
         "./answer_files/7/Autounattend.xml",
         "./scripts/dis-updates.ps1",
         "./scripts/microsoft-updates.bat",
-        "./scripts/win-updates.ps1",
-        "./scripts/openssh.ps1"
+        "./scripts/win-updates.ps1"
       ],
       "guest_os_type": "windows7-64",
       "headless": false,
@@ -34,14 +37,17 @@
     },
     {
       "boot_wait": "2m",
+      "communicator": "winrm",
+      "winrm_password": "vagrant",
+      "winrm_timeout": "{{user `winrm_timeout`}}",
+      "winrm_username": "vagrant",
       "cpus": 2,
       "disk_size": 61440,
       "floppy_files": [
         "./answer_files/7/Autounattend.xml",
         "./scripts/dis-updates.ps1",
         "./scripts/microsoft-updates.bat",
-        "./scripts/win-updates.ps1",
-        "./scripts/openssh.ps1"
+        "./scripts/win-updates.ps1"
       ],
       "guest_os_type": "Windows7_64",
       "headless": false,
@@ -98,20 +104,20 @@
   ],
   "provisioners": [
     {
-      "execute_command": "{{.Vars}} cmd /c C:/Windows/Temp/script.bat",
+      "execute_command": "{{.Vars}} cmd /c C:/tmp/script.bat",
       "remote_path": "/tmp/script.bat",
       "scripts": [
         "./scripts/vm-guest-tools.bat",
-        "./scripts/chef.bat",
-        "./scripts/vagrant-ssh.bat",
+        "./scripts/disable-auto-logon.bat",
         "./scripts/enable-rdp.bat",
-        "./scripts/enable-winrm.bat",
-        "./scripts/disable-tasks.bat",
         "./scripts/compile-dotnet-assemblies.bat",
         "./scripts/compact.bat"
       ],
-      "type": "shell"
+      "type": "windows-shell"
     }
-  ]
+  ],
+  "variables": {
+    "winrm_timeout": "6h"
+  }
 }
 
