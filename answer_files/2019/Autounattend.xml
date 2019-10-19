@@ -52,10 +52,6 @@
                 <PathAndCredentials wcm:action="add" wcm:keyValue="11">
                     <Path>E:\vioserial\2k19\amd64</Path>
                 </PathAndCredentials>
-
-                <PathAndCredentials wcm:action="add" wcm:keyValue="12">
-                    <Path>E:\vioserial\2k19\amd64</Path>
-                </PathAndCredentials>
             </DriverPaths>
         </component>
 
