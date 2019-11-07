@@ -167,6 +167,22 @@ hyperv-iso output will be in this color.
 * Secondary Dvd image does not exist: CreateFile ./iso/windows_server_insider_unattend.iso: The system cannot find the file specified.
 ```
 
+### KVM/qemu support
+
+If you are using Linux and have KVM/qemu configured, you can use these packerfiles to build a KVM virtual machine.
+To build a KVM/qemu box, first make sure:
+
+* You are a member of the kvm group on your machine. You can list the groups you are member of by running `groups`. It should
+  include the `kvm` group. If you're not a member, run `sudo usermod -aG kvm $(whoami)` to add yourself.
+* You have downloaded [the iso image with the Windows drivers for paravirtualized KVM/qemu hardware](wget -nv -nc https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso).
+  You can do this from the command line: `wget -nv -nc https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso -O virtio-win.iso`.
+
+You can use the following sample command to build a KVM/qemu box:
+
+```
+packer build --only=qemu --var virtio_win_iso=./virtio-win.iso ./windows_2019_docker.json
+```
+
 ### Using .box Files With Vagrant
 
 The generated box files include a Vagrantfile template that is suitable for use
