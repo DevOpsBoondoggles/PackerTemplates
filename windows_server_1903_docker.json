@@ -164,7 +164,7 @@
     "not_found_docker_images": "mcr.microsoft.com/windows/nanoserver:1903 mcr.microsoft.com/windows/servercore:1903 mcr.microsoft.com/windows:1903",
     "docker_images": "",
     "docker_provider": "ee",
-    "docker_version": "19.03.3",
+    "docker_version": "19.03.5",
     "headless": "false",
     "iso_checksum": "10a61364246f94ef2888b47a00d02b2f9fec8a94f0c745685416f4ba331cb4be",
     "iso_checksum_type": "sha256",
