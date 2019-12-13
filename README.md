@@ -174,7 +174,7 @@ To build a KVM/qemu box, first make sure:
 
 * You are a member of the kvm group on your machine. You can list the groups you are member of by running `groups`. It should
   include the `kvm` group. If you're not a member, run `sudo usermod -aG kvm $(whoami)` to add yourself.
-* You have downloaded [the iso image with the Windows drivers for paravirtualized KVM/qemu hardware](wget -nv -nc https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso).
+* You have downloaded [the iso image with the Windows drivers for paravirtualized KVM/qemu hardware](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso).
   You can do this from the command line: `wget -nv -nc https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso -O virtio-win.iso`.
 
 You can use the following sample command to build a KVM/qemu box:
