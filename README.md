@@ -183,6 +183,24 @@ You can use the following sample command to build a KVM/qemu box:
 packer build --only=qemu --var virtio_win_iso=./virtio-win.iso ./windows_2019_docker.json
 ```
 
+### Parallels support
+
+In case you're using Parallels, you can now build the `Windows Server 2019 with Docker` VM.
+
+Prerequisites:
+* Parallels Pro or Business, version 11 and up.
+* Vagrant Parallels Provider: https://github.com/Parallels/vagrant-parallels
+
+You can use the following sample command to build a Parallels VM:
+
+```
+packer build --only=parallels-iso windows_2019_docker.json
+```
+
+
+The Parallels builder config turns `efi boot` off in order to use the same answer file like all the other builders. If you find you need to turn `efi boot` on then make sure to adjust the appropriate answer file, especially the section regarding the partitioning of the disk.
+If you need to further customize the VM, consult the documentation at https://www.packer.io/docs/builders/parallels-iso.html. 
+
 ### Using .box Files With Vagrant
 
 The generated box files include a Vagrantfile template that is suitable for use
