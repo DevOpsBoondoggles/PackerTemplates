@@ -64,18 +64,6 @@
           "{{.Name}}",
           "--vrdeport",
           "13389"
-        ],
-        [
-          "modifyvm",
-          "{{.Name}}",
-          "--vcpenabled",
-          "off"
-        ],
-        [
-          "modifyvm",
-          "{{.Name}}",
-          "--vcpfile",
-          "windows_81.webm"
         ]
       ]
     }
