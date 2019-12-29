@@ -133,6 +133,25 @@ uncommenting the `WITHOUT WINDOWS UPDATES` section in `Autounattend.xml`:
 
 Doing so will give you hours back in your day, which is a good thing.
 
+### Windows 7 support
+
+Windows 7 is going out of support in January 2020, and the scripts for building Windows 7 machines are only
+sporadically maintained.
+
+Windows 7 was first released in 2009. This means there are a lot of updates available for Windows 7,
+and running Windows Updates on a Windows 7 box using the mechanism described above takes an extremely long time.
+
+The Windows 7 templates therefore take a slightly different approach, first installing Service Pack 1,
+updating the servicing stack and then installing the latest update rollup, .NET 4.8 and PowerShell 5.1.
+Finally, any missing updates are installed using Ansible.
+
+This means you'll need to install Ansible on your machine if you want to run the Windows 7 scripts.
+You can [install ansible on a Linux machine](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html).
+
+If you want to run these scripts on a Windows machine, you can try to run Ansible in cygwin or Bash on Ubuntu on Windows.
+Alternatively, you can disable the `ansible` steps in the `windows_7.json` file. Make sure to manually run
+Windows Update if you do!
+
 ### WinRM
 
 These boxes use WinRM. There is no OpenSSH installed.

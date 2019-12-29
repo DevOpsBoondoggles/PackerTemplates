@@ -14,7 +14,7 @@ $files = @(Get-ChildItem *.json)
 
 foreach ($file in $files) {
   Write-Host "`n`nValidate $file"
-  packer.exe validate $file
+  packer.exe validate -except=qemu $file
   if (-not $?)
   {
      throw "Packer validate found errors in $file!"
