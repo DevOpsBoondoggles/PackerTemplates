@@ -10,7 +10,7 @@ $env:PACKER_AZURE_RESOURCE_GROUP="dummy"
 $env:PACKER_AZURE_STORAGE_ACCOUNT="dummy"
 $env:AWS_S3_BUCKET="dummy"
 
-$files = @(Get-ChildItem *.json)
+$files = @(Get-ChildItem *.json | Where-Object -FilterScript { $_.Name -ne "windows_7.json" })
 
 foreach ($file in $files) {
   Write-Host "`n`nValidate $file"
