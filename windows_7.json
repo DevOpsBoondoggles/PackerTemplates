@@ -22,7 +22,7 @@
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "ssh_password": "vagrant",
       "ssh_username": "vagrant",
-      "ssh_wait_timeout": "8h",
+      "ssh_timeout": "8h",
       "type": "qemu",
       "accelerator": "kvm",
       "output_directory": "windows_7-qemu",
@@ -56,7 +56,7 @@
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "ssh_password": "vagrant",
       "ssh_username": "vagrant",
-      "ssh_wait_timeout": "8h",
+      "ssh_timeout": "8h",
       "tools_upload_flavor": "windows",
       "type": "vmware-iso",
       "vmx_data": {
@@ -90,7 +90,7 @@
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "ssh_password": "vagrant",
       "ssh_username": "vagrant",
-      "ssh_wait_timeout": "8h",
+      "ssh_timeout": "8h",
       "type": "virtualbox-iso",
       "vboxmanage": [
         [
