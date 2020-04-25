@@ -7,17 +7,17 @@
       "winrm_timeout": "{{user `winrm_timeout`}}",
       "winrm_username": "vagrant",
       "cpus": 2,
-      "disk_size": 61440,
+      "disk_size": "{{user `disk_size`}}",
       "floppy_files": [
-        "./answer_files/7/Autounattend.xml",
+        "{{user `autounattend`}}",
         "./scripts/dis-updates.ps1",
         "./scripts/microsoft-updates.bat",
         "./scripts/enable-winrm.ps1"
       ],
       "headless": true,
-      "iso_checksum": "1d0d239a252cb53e466d39e752b17c28",
-      "iso_checksum_type": "md5",
-      "iso_url": "http://care.dlservice.microsoft.com/dl/download/evalx/win7/x64/EN/7600.16385.090713-1255_x64fre_enterprise_en-us_EVAL_Eval_Enterprise-GRMCENXEVAL_EN_DVD.iso",
+      "iso_checksum": "{{user `iso_checksum`}}",
+      "iso_checksum_type": "{{user `iso_checksum_type`}}",
+      "iso_url": "{{user `iso_url`}}",
       "memory": 4096,
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "ssh_password": "vagrant",
@@ -40,18 +40,18 @@
       "winrm_username": "vagrant",
       "cpus": 2,
       "disk_adapter_type": "lsisas1068",
-      "disk_size": 61440,
+      "disk_size": "{{user `disk_size`}}",
       "floppy_files": [
-        "./answer_files/7/Autounattend.xml",
+        "{{user `autounattend`}}",
         "./scripts/dis-updates.ps1",
         "./scripts/microsoft-updates.bat",
         "./scripts/enable-winrm.ps1"
       ],
       "guest_os_type": "windows7-64",
-      "headless": false,
-      "iso_checksum": "1d0d239a252cb53e466d39e752b17c28",
-      "iso_checksum_type": "md5",
-      "iso_url": "http://care.dlservice.microsoft.com/dl/download/evalx/win7/x64/EN/7600.16385.090713-1255_x64fre_enterprise_en-us_EVAL_Eval_Enterprise-GRMCENXEVAL_EN_DVD.iso",
+      "headless": "{{user `headless`}}",
+      "iso_checksum": "{{user `iso_checksum`}}",
+      "iso_checksum_type": "{{user `iso_checksum_type`}}",
+      "iso_url": "{{user `iso_url`}}",
       "memory": 2048,
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "ssh_password": "vagrant",
@@ -74,18 +74,18 @@
       "winrm_timeout": "{{user `winrm_timeout`}}",
       "winrm_username": "vagrant",
       "cpus": 2,
-      "disk_size": 61440,
+      "disk_size": "{{user `disk_size`}}",
       "floppy_files": [
-        "./answer_files/7/Autounattend.xml",
+        "{{user `autounattend`}}",
         "./scripts/dis-updates.ps1",
         "./scripts/microsoft-updates.bat",
         "./scripts/enable-winrm.ps1"
       ],
       "guest_os_type": "Windows7_64",
-      "headless": false,
-      "iso_checksum": "1d0d239a252cb53e466d39e752b17c28",
-      "iso_checksum_type": "md5",
-      "iso_url": "http://care.dlservice.microsoft.com/dl/download/evalx/win7/x64/EN/7600.16385.090713-1255_x64fre_enterprise_en-us_EVAL_Eval_Enterprise-GRMCENXEVAL_EN_DVD.iso",
+      "headless": "{{user `headless`}}",
+      "iso_checksum": "{{user `iso_checksum`}}",
+      "iso_checksum_type": "{{user `iso_checksum_type`}}",
+      "iso_url": "{{user `iso_url`}}",
       "memory": 2048,
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "ssh_password": "vagrant",
@@ -129,7 +129,7 @@
     },
     {
       "type": "windows-restart",
-      "restart_timeout": "20m"
+      "restart_timeout": "{{user `restart_timeout`}}"
     },
     {
       "script": "./scripts/win-7-update-2019-03-servicing-stack.ps1",
@@ -137,7 +137,7 @@
     },
     {
       "type": "windows-restart",
-      "restart_timeout": "20m"
+      "restart_timeout": "{{user `restart_timeout`}}"
     },
     {
       "script": "./scripts/win-7-update-2019-09-sha2.ps1",
@@ -145,7 +145,7 @@
     },
     {
       "type": "windows-restart",
-      "restart_timeout": "20m"
+      "restart_timeout": "{{user `restart_timeout`}}"
     },
     {
       "script": "./scripts/win-7-update-2019-09-servicing-stack.ps1",
@@ -153,7 +153,7 @@
     },
     {
       "type": "windows-restart",
-      "restart_timeout": "20m"
+      "restart_timeout": "{{user `restart_timeout`}}"
     },
     {
       "script": "./scripts/win-7-update-2016-convenience-rollup.ps1",
@@ -161,7 +161,7 @@
     },
     {
       "type": "windows-restart",
-      "restart_timeout": "20m"
+      "restart_timeout": "{{user `restart_timeout`}}"
     },
     {
       "script": "./scripts/win-7-update-2019-10-update-rollup.ps1",
@@ -169,7 +169,7 @@
     },
     {
       "type": "windows-restart",
-      "restart_timeout": "20m"
+      "restart_timeout": "{{user `restart_timeout`}}"
     },
     {
       "script": "./scripts/win-7-update-net48.ps1",
@@ -177,7 +177,7 @@
     },
     {
       "type": "windows-restart",
-      "restart_timeout": "20m"
+      "restart_timeout": "{{user `restart_timeout`}}"
     },
     {
       "script": "./scripts/win-7-update-powershell-5.1.ps1",
@@ -185,7 +185,7 @@
     },
     {
       "type": "windows-restart",
-      "restart_timeout": "20m"
+      "restart_timeout": "{{user `restart_timeout`}}"
     },
     {
       "type": "ansible",
@@ -197,7 +197,7 @@
     },
     {
       "type": "windows-restart",
-      "restart_timeout": "20m"
+      "restart_timeout": "{{user `restart_timeout`}}"
     },
     {
       "type": "ansible",
@@ -209,7 +209,7 @@
     },
     {
       "type": "windows-restart",
-      "restart_timeout": "20m"
+      "restart_timeout": "{{user `restart_timeout`}}"
     },
     {
       "scripts": [
@@ -223,6 +223,13 @@
     }
   ],
   "variables": {
+    "autounattend": "./answer_files/7/Autounattend.xml",
+    "disk_size": "61440",
+    "headless": "false",
+    "iso_checksum": "1d0d239a252cb53e466d39e752b17c28",
+    "iso_checksum_type": "md5",
+    "iso_url": "http://care.dlservice.microsoft.com/dl/download/evalx/win7/x64/EN/7600.16385.090713-1255_x64fre_enterprise_en-us_EVAL_Eval_Enterprise-GRMCENXEVAL_EN_DVD.iso",
+    "restart_timeout": "20m",
     "winrm_timeout": "6h",
     "virtio_win_iso": "~/virtio-win.iso"
   }
