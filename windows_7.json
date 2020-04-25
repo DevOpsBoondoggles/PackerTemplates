@@ -24,6 +24,7 @@
       "ssh_username": "vagrant",
       "ssh_timeout": "8h",
       "type": "qemu",
+      "vm_name": "{{user `vm_name`}}",
       "accelerator": "kvm",
       "output_directory": "windows_7-qemu",
       "qemuargs": [
@@ -59,6 +60,7 @@
       "ssh_timeout": "8h",
       "tools_upload_flavor": "windows",
       "type": "vmware-iso",
+      "vm_name": "{{user `vm_name`}}",
       "vmx_data": {
         "RemoteDisplay.vnc.enabled": "false",
         "RemoteDisplay.vnc.port": "5900"
@@ -92,6 +94,7 @@
       "ssh_username": "vagrant",
       "ssh_timeout": "8h",
       "type": "virtualbox-iso",
+      "vm_name": "{{user `vm_name`}}",
       "vboxmanage": [
         [
           "modifyvm",
@@ -231,6 +234,7 @@
     "iso_url": "http://care.dlservice.microsoft.com/dl/download/evalx/win7/x64/EN/7600.16385.090713-1255_x64fre_enterprise_en-us_EVAL_Eval_Enterprise-GRMCENXEVAL_EN_DVD.iso",
     "restart_timeout": "20m",
     "winrm_timeout": "6h",
+    "vm_name": "windows_7",
     "virtio_win_iso": "~/virtio-win.iso"
   }
 }
