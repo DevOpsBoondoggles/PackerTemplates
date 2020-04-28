@@ -1,3 +1,10 @@
+# First check if Service Pack 1 is installed.
+$os = Get-WmiObject -class Win32_OperatingSystem
+if ($os.ServicePackMajorVersion -ge 1) {
+    Write-Host "Windows 7 Service Pack 1 is already installed."
+    Exit
+}
+
 New-Item -Path "C:\" -Name "Updates" -ItemType Directory
 
 # Service Pack 1 is an absolute requirement. Installing updates from Windows Update
