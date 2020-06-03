@@ -122,6 +122,7 @@
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "type": "parallels-iso",
       "parallels_tools_flavor": "win",
+      "parallels_tools_mode": "disable",
       "prlctl": [
         ["set", "{{.Name}}", "--adaptive-hypervisor", "on"],
         ["set", "{{.Name}}", "--efi-boot", "off"]
