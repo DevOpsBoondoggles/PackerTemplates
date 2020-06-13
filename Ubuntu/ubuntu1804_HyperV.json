@@ -29,8 +29,7 @@
             "iso_urls": [
             "c://isos/ubuntu1804.iso"
             ],
-            "iso_checksum_type": "sha256",
-            "iso_checksum": "E2ECDACE33C939527CBC9E8D23576381C493B071107207D2040AF72595F8990B",
+            "iso_checksum": "sha256:E2ECDACE33C939527CBC9E8D23576381C493B071107207D2040AF72595F8990B",
             "ssh_username": "vagrant",
             "ssh_password": "vagrant",
             "ssh_port": 22,

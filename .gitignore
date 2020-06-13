@@ -9,7 +9,7 @@
 /output-virtualbox-iso/
 /output-virtualbox-ovf/
 /*.box
-/packer_cache/
+*/packer_cache/*
 *.log
 *~
 *.swp
